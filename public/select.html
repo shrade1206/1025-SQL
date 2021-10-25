@@ -1,0 +1,41 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</head>
+<body>
+    <h1>Gin WebSocket test</h1>
+    <h3>請輸入要查詢的檔案名稱</h3>
+
+    <input type="text" id="saveName">
+    <button id="select" onclick="select();" value="select">查詢</button><br>
+
+    <img id="img" src="" alt="">
+    
+    <div id="test"></div>
+
+    <script src="/select.js"></script>
+
+    <c:forEach var="pic" items="${select}" varStatus="status">
+    	  <tr>
+            <td style="vertical-align:middle;"><h4>${pic.Id}</h4></td>
+            <td class="mid" style="vertical-align:middle;"><h4>${pic.Name}</h4></td>
+            <td class="mid" style="vertical-align:middle;"><img class="Img" src=""></td>
+            
+            <td class="mid" style="vertical-align:middle;">
+			  <button  class="del" name="${pic.Name}" id="${pic.Id}">移除品項</button>
+            </td>
+            
+            <td class="mid" style="vertical-align:middle;">
+            	<button class="change" onclick="">修改</button>
+            </td>
+      	  </tr>
+      	  
+    </c:forEach>
+
+    <script type="text/javascript">
+       
+        
+    </script>
+</body>
+</html>
